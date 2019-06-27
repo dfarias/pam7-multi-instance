@@ -12,6 +12,7 @@ public class AnaliseTecnicaDO implements java.io.Serializable {
 	private java.lang.String parecer;
 	@org.kie.api.definition.type.Label("Análise favorável?")
 	private java.lang.Boolean favoravel;
+	private static final java.lang.String PATTERN = "[ %s ] %s";
 
 	public AnaliseTecnicaDO() {
 	}
@@ -37,5 +38,10 @@ public class AnaliseTecnicaDO implements java.io.Serializable {
 		this.parecer = parecer;
 		this.favoravel = favoravel;
 	}
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return java.lang.String.format(PATTERN, favoravel, parecer);
+    }
 
 }
